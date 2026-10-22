@@ -1,0 +1,1083 @@
+/* ==================================
+   WISHIE BIRTHDAY WEBSITE
+   Cute pastel theme 🎀
+================================== */
+
+/* 1. BASIC SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff8fb3;
+    --light-pink: #ffe2ed;
+    --soft-pink: #fff3f7;
+    --lavender: #e9ddff;
+    --purple: #a78bfa;
+    --dark-purple: #76518e;
+    --text: #705a73;
+    --gold: #f5cb78;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Nunito", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            #ffe3ee 0,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            #eee3ff 0,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #fff9fc,
+            #fff5fa,
+            #faf6ff
+        );
+    overflow-x: hidden;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+    outline: 3px solid var(--purple);
+    outline-offset: 4px;
+}
+
+/* 2. BACKGROUND DECORATIONS */
+
+.floating-decor {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.floating-decor span {
+    position: absolute;
+    color: rgba(219, 133, 177, 0.3);
+    animation: floatAround 6s ease-in-out infinite;
+}
+
+.floating-decor span:nth-child(1) {
+    top: 12%;
+    left: 6%;
+    font-size: 28px;
+}
+
+.floating-decor span:nth-child(2) {
+    top: 35%;
+    right: 7%;
+    font-size: 35px;
+    animation-delay: 1s;
+}
+
+.floating-decor span:nth-child(3) {
+    top: 62%;
+    left: 4%;
+    font-size: 25px;
+    animation-delay: 2s;
+}
+
+.floating-decor span:nth-child(4) {
+    top: 78%;
+    right: 8%;
+    font-size: 30px;
+    animation-delay: 0.5s;
+}
+
+.floating-decor span:nth-child(5) {
+    top: 90%;
+    left: 45%;
+    font-size: 24px;
+    animation-delay: 1.5s;
+}
+
+@keyframes floatAround {
+    0%, 100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-18px) rotate(15deg);
+    }
+}
+
+/* 3. MAIN CONTAINER
+   Uses the available screen width. */
+
+.website-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 5%;
+}
+
+/* 4. HERO SECTION */
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    padding: 70px 15px 65px;
+}
+
+.top-decoration {
+    font-size: 30px;
+    margin-bottom: 18px;
+    animation: gentleBounce 3s ease-in-out infinite;
+}
+
+.tiny-label,
+.section-label {
+    display: inline-block;
+    color: #bd7ba3;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.tiny-label {
+    padding: 8px 16px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #f9d7e5;
+}
+
+.hero-title {
+    width: 100%;
+    font-size: clamp(38px, 8vw, 82px);
+    font-weight: 900;
+    color: #d96f9b;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    animation: fadeUp 0.9s ease both;
+}
+
+.cute-word {
+    display: block;
+    margin-top: 8px;
+    font-family: "Pacifico", cursive;
+    font-size: clamp(38px, 8vw, 72px);
+    font-weight: 400;
+    color: var(--dark-purple);
+    letter-spacing: 0;
+}
+
+.hero-cake {
+    width: 180px;
+    height: 180px;
+    margin: 18px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        white,
+        #ffe8f1 60%,
+        transparent 72%
+    );
+    animation: cakeFloat 3s ease-in-out infinite;
+}
+
+.cake-emoji {
+    font-size: 90px;
+    filter: drop-shadow(
+        0 10px 12px rgba(170, 100, 145, 0.15)
+    );
+}
+
+.cake-sparkle {
+    position: absolute;
+    color: var(--gold);
+    font-size: 27px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.sparkle-one {
+    top: 12px;
+    left: 8px;
+}
+
+.sparkle-two {
+    top: 22px;
+    right: 0;
+    animation-delay: 0.5s;
+}
+
+.sparkle-three {
+    bottom: 12px;
+    right: 15px;
+    animation-delay: 1s;
+}
+
+.hero-message {
+    width: 100%;
+    max-width: 550px;
+    margin: 5px auto 25px;
+    color: #8d758e;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 28px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(
+        135deg,
+        #ff8fb3,
+        #d69ae9
+    );
+    color: white;
+    font-size: 15px;
+    font-weight: 900;
+    box-shadow: 0 10px 25px rgba(220, 125, 175, 0.3);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(220, 125, 175, 0.4);
+}
+
+.main-button:active {
+    transform: scale(0.97);
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 20px;
+    font-size: 12px;
+    color: #a58ba7;
+    animation: hintBounce 2s ease-in-out infinite;
+}
+
+/* 5. SHARED SECTION DESIGN */
+
+.celebration-section,
+.message-section,
+.cake-section,
+.gift-section,
+.ending-section {
+    width: 100%;
+    padding: 80px 0;
+    text-align: center;
+    scroll-margin-top: 20px;
+}
+
+.section-sticker {
+    font-size: 38px;
+    margin-bottom: 14px;
+}
+
+.section-title {
+    width: 100%;
+    color: var(--dark-purple);
+    font-size: clamp(28px, 5vw, 45px);
+    line-height: 1.35;
+    font-weight: 900;
+    margin-bottom: 15px;
+    overflow-wrap: break-word;
+}
+
+.section-description {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto 25px;
+    color: #927d94;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* 6. CELEBRATION */
+
+.celebration-section {
+    padding: 65px 5%;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 35px;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 224, 237, 0.9),
+        rgba(235, 224, 255, 0.9)
+    );
+    box-shadow: 0 15px 40px rgba(180, 125, 175, 0.12);
+    overflow: hidden;
+}
+
+.party-decorations {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(12px, 4vw, 35px);
+    margin: 35px auto 20px;
+}
+
+.party-decorations span {
+    display: inline-block;
+    font-size: clamp(36px, 7vw, 58px);
+    animation: partyBounce 2s ease-in-out infinite;
+}
+
+.party-decorations span:nth-child(even) {
+    animation-delay: 0.5s;
+}
+
+.celebration-note {
+    margin-top: 22px;
+    font-family: "Pacifico", cursive;
+    color: #c779a4;
+    font-size: clamp(21px, 4vw, 30px);
+}
+
+/* 7. MESSAGE CARD */
+
+.message-card {
+    width: 100%;
+    max-width: 760px;
+    margin: 25px auto 0;
+    padding: clamp(25px, 5vw, 48px);
+    text-align: left;
+    position: relative;
+    background: rgba(255, 255, 255, 0.94);
+    border: 2px solid #ffe1ed;
+    border-radius: 28px;
+    box-shadow: 0 15px 45px rgba(183, 130, 173, 0.13);
+    overflow: hidden;
+}
+
+.message-card::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -50px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #f2e8ff;
+}
+
+.message-top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    padding-bottom: 20px;
+    margin-bottom: 22px;
+    border-bottom: 1px dashed #f0c6dc;
+}
+
+.envelope-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: var(--soft-pink);
+    font-size: 25px;
+}
+
+.message-heading {
+    font-family: "Pacifico", cursive;
+    color: #c778a2;
+    font-size: clamp(21px, 4vw, 27px);
+    font-weight: 400;
+}
+
+.message-content {
+    position: relative;
+    color: #806a80;
+    font-size: 15px;
+    line-height: 2;
+    overflow-wrap: break-word;
+}
+
+.message-content p {
+    margin-bottom: 15px;
+}
+
+.special-wish {
+    color: #bc6e9a;
+    font-weight: 900;
+    background: linear-gradient(
+        transparent 60%,
+        #ffe2ee 60%
+    );
+}
+
+.message-signature {
+    margin-top: 25px;
+    color: #9a7ab0;
+    font-family: "Pacifico", cursive;
+    font-size: 23px;
+}
+
+.message-bottom-decoration {
+    text-align: right;
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+/* 8. CAKE SECTION */
+
+.cake-section {
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(255, 230, 241, 0.5),
+        transparent
+    );
+}
+
+.animated-cake {
+    width: 230px;
+    height: 230px;
+    margin: 35px auto 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    animation: cakeFloat 3s ease-in-out infinite;
+}
+
+.cake-candles {
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 22px;
+    position: relative;
+    z-index: 5;
+    margin-bottom: -2px;
+}
+
+.candle {
+    width: 10px;
+    height: 48px;
+    border-radius: 5px 5px 2px 2px;
+    position: relative;
+    background: repeating-linear-gradient(
+        135deg,
+        white 0 5px,
+        #ff9fc2 5px 10px
+    );
+}
+
+.flame {
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    width: 13px;
+    height: 20px;
+    border-radius: 50% 50% 45% 45%;
+    background: radial-gradient(
+        circle at 50% 70%,
+        #fff6b0 0 20%,
+        #ffbc54 45%,
+        #ff8b66 75%
+    );
+    box-shadow: 0 0 15px rgba(255, 190, 80, 0.6);
+    transform: translateX(-50%);
+    transform-origin: bottom center;
+    animation: flameDance 0.6s ease-in-out infinite alternate;
+}
+
+.cake-layer {
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 5px 10px rgba(170, 110, 150, 0.12);
+}
+
+.cake-top {
+    width: 145px;
+    height: 25px;
+    background: #ffc4dc;
+    border-radius: 50%;
+    z-index: 3;
+    margin-bottom: -12px;
+}
+
+.icing-drip {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff0f7;
+}
+
+.cake-middle {
+    width: 175px;
+    height: 50px;
+    border-radius: 12px 12px 8px 8px;
+    background: linear-gradient(
+        90deg,
+        #ffb4d1,
+        #ffd2e4,
+        #ffb4d1
+    );
+    z-index: 2;
+}
+
+.cake-middle::before {
+    content: "♥  ♥  ♥  ♥";
+    position: absolute;
+    top: 17px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+.cake-bottom {
+    width: 205px;
+    height: 55px;
+    border-radius: 8px 8px 12px 12px;
+    background: linear-gradient(
+        90deg,
+        #cdb5ff,
+        #e5d8ff,
+        #cdb5ff
+    );
+    z-index: 1;
+    margin-top: -2px;
+}
+
+.cake-plate {
+    width: 225px;
+    height: 13px;
+    background: linear-gradient(#fff, #e9dff0);
+    border-radius: 50%;
+    box-shadow: 0 7px 15px rgba(140, 100, 150, 0.12);
+    margin-top: -2px;
+}
+
+.cake-wish {
+    margin: 20px auto;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #9a7ba5;
+}
+
+.secondary-button {
+    max-width: 100%;
+    padding: 13px 24px;
+    border: 2px solid #f1c5dc;
+    border-radius: 50px;
+    background: white;
+    color: #bc719b;
+    font-size: 14px;
+    font-weight: 900;
+    box-shadow: 0 7px 20px rgba(190, 120, 165, 0.12);
+    transition: 0.25s ease;
+}
+
+.secondary-button:hover {
+    background: #fff0f6;
+    transform: translateY(-3px);
+}
+
+.wish-made {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto 0;
+    padding: 15px;
+    border-radius: 16px;
+    background: white;
+    color: #bc719b;
+    font-weight: 800;
+    line-height: 1.7;
+    box-shadow: 0 10px 25px rgba(190, 120, 165, 0.12);
+    animation: fadeUp 0.5s ease both;
+}
+
+/* 9. GIFT BUTTON */
+
+.gift-stars {
+    color: var(--gold);
+    font-size: 25px;
+    letter-spacing: 15px;
+    margin: 25px 0;
+}
+
+.gift-button {
+    width: 160px;
+    height: 170px;
+    display: block;
+    position: relative;
+    margin: 20px auto;
+    border: none;
+    background: transparent;
+    transition: transform 0.3s ease;
+}
+
+.gift-button:hover {
+    transform: scale(1.06) rotate(-3deg);
+}
+
+.gift-button:active {
+    transform: scale(0.96);
+}
+
+.gift-bow {
+    position: absolute;
+    z-index: 3;
+    top: 18px;
+    left: 50%;
+    width: 60px;
+    height: 30px;
+    transform: translateX(-50%);
+}
+
+.gift-bow::before,
+.gift-bow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 28px;
+    height: 22px;
+    border: 7px solid #ff8fb3;
+    border-radius: 50% 50% 10% 50%;
+}
+
+.gift-bow::before {
+    left: 0;
+    transform: rotate(25deg);
+}
+
+.gift-bow::after {
+    right: 0;
+    transform: rotate(-25deg) scaleX(-1);
+}
+
+.gift-box {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    width: 100px;
+    height: 82px;
+    transform: translateX(-50%);
+    border-radius: 8px;
+    background: linear-gradient(
+        135deg,
+        #ff9fc2,
+        #e58bb6
+    );
+    box-shadow: 0 12px 25px rgba(205, 110, 160, 0.2);
+    overflow: hidden;
+}
+
+.gift-box::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 20px;
+    height: 100%;
+    transform: translateX(-50%);
+    background: #fff0a8;
+}
+
+.gift-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: #ffd3e5;
+}
+
+.gift-tap {
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 180px;
+    transform: translateX(-50%);
+    color: #b68db9;
+    font-size: 12px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.gift-opened {
+    animation: giftPop 0.5s ease both;
+}
+
+/* 10. GIFT SURPRISE */
+
+.gift-surprise {
+    width: 100%;
+    max-width: 760px;
+    margin: 25px auto 0;
+    padding: clamp(25px, 5vw, 45px);
+    border: 2px solid #ffe0ec;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 15px 45px rgba(183, 130, 173, 0.13);
+    animation: fadeUp 0.7s ease both;
+}
+
+.surprise-sticker {
+    font-size: 48px;
+    margin-bottom: 18px;
+}
+
+.gift-surprise .section-title {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+}
+
+.surprise-special {
+    margin: 18px auto;
+    color: #c574a1;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.8;
+}
+
+.mini-surprise-cake {
+    font-size: 50px;
+    margin: 18px 0;
+    animation: cakeFloat 2.5s ease-in-out infinite;
+}
+
+.surprise-footer {
+    margin-top: 22px;
+    color: #9c7bb1;
+    font-family: "Pacifico", cursive;
+    font-size: 21px;
+}
+
+/* 11. ENDING */
+
+.ending-section {
+    padding-top: 80px;
+    padding-bottom: 55px;
+}
+
+.ending-hearts {
+    font-size: 30px;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    animation: gentleBounce 2s ease-in-out infinite;
+}
+
+.ending-title {
+    font-family: "Pacifico", cursive;
+    color: #d778a4;
+    font-size: clamp(30px, 7vw, 50px);
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.ending-message {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto 30px;
+    color: #927c92;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.ending-decoration {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.wishie-brand {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 22px;
+    border: 1px solid #f8d8e7;
+    border-radius: 50px;
+    background: white;
+    color: #d778a4;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.brand-tagline {
+    margin-top: 10px;
+    color: #a58ba5;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.back-button {
+    display: block;
+    margin: 30px auto 0;
+    padding: 11px 18px;
+    border: 1px solid #f3d5e5;
+    border-radius: 30px;
+    background: white;
+    color: #a77ba1;
+    font-size: 12px;
+    font-weight: 800;
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+}
+
+/* 12. CONFETTI */
+
+.confetti-container {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -20px;
+    width: 9px;
+    height: 14px;
+    border-radius: 3px;
+    animation: confettiFall 3.5s linear forwards;
+}
+
+/* 13. ANIMATIONS */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes cakeFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.5;
+        scale: 0.9;
+    }
+
+    50% {
+        opacity: 1;
+        scale: 1.2;
+    }
+}
+
+@keyframes gentleBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes hintBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
+
+@keyframes partyBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+@keyframes flameDance {
+    from {
+        rotate: -6deg;
+        scale: 1;
+    }
+
+    to {
+        rotate: 6deg;
+        scale: 0.9 1.1;
+    }
+}
+
+@keyframes giftPop {
+    0% {
+        transform: scale(0.7) rotate(-8deg);
+    }
+
+    70% {
+        transform: scale(1.08) rotate(3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-20px) rotate(0);
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(105vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* 14. MOBILE RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .website-container {
+        padding: 0 16px;
+    }
+
+    .hero {
+        padding: 70px 4px 65px;
+    }
+
+    .hero-title {
+        letter-spacing: 0;
+    }
+
+    .hero-cake {
+        width: 155px;
+        height: 155px;
+    }
+
+    .cake-emoji {
+        font-size: 78px;
+    }
+
+    .hero-message {
+        font-size: 14px;
+    }
+
+    .celebration-section,
+    .message-section,
+    .cake-section,
+    .gift-section,
+    .ending-section {
+        padding-top: 58px;
+        padding-bottom: 58px;
+    }
+
+    .celebration-section {
+        padding-left: 12px;
+        padding-right: 12px;
+        border-radius: 25px;
+    }
+
+    .message-card {
+        padding: 24px 20px;
+        border-radius: 22px;
+    }
+
+    .message-content {
+        font-size: 14px;
+    }
+
+    .animated-cake {
+        transform: scale(0.92);
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+
+    .gift-surprise {
+        padding: 25px 18px;
+        border-radius: 22px;
+    }
+
+    .party-decorations {
+        gap: 12px;
+    }
+
+    .party-decorations span {
+        font-size: 36px;
+    }
+}
+
+/* 15. ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
